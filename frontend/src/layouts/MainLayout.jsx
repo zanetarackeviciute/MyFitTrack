@@ -1,21 +1,26 @@
 import { Outlet, NavLink } from "react-router-dom"
 import styles from './MainLayout.module.scss'
+import logo from '../assets/MyFitTrackLogo.png'
 
 const MainLayout = () => {
     return (
         <div>
-            <nav>
-                <div>
-                    <NavLink to='/'>MyFitTrack</NavLink>
+            <nav className="navbar navbar-expand bg-dark">
+                <div className="container">
+                    <div id="logo">
+                        <NavLink to='/' className="navbar-brand"><img src={logo} alt="logo" className="logo-img"/></NavLink>
+                    </div>
+                    <div className="collapse navbar-collapse">
+                        <ul className="navbar-nav">
+                            <li className="nav-item active" aria-current="page"><NavLink to='/'>Home</NavLink></li>
+                            <li className="nav-item"><NavLink to='/new-workout'>New workout</NavLink></li>
+                            <li className="nav-item"><NavLink to='/body-measure'>Body measure</NavLink></li>
+                            <li className="nav-item"><NavLink to='/progress'>Progress</NavLink></li>
+                            <li className="nav-item"><NavLink to='/workout-history'>History</NavLink></li>
+                            <li className="nav-item"><NavLink to='/about'>About</NavLink></li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li><NavLink to='/'>Home</NavLink></li>
-                    <li><NavLink to='/new-workout'>New workout</NavLink></li>
-                    <li><NavLink to='/body-measure'>Body measure</NavLink></li>
-                    <li><NavLink to='/progress'>Progress</NavLink></li>
-                    <li><NavLink to='/workout-history'>History</NavLink></li>
-                    <li><NavLink to='/about'>About</NavLink></li>
-                </ul>
             </nav>
             <div>
                 <Outlet/>

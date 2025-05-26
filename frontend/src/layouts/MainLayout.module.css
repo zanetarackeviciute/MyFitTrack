@@ -1,3 +1,12 @@
-
+nav {
+  display: flex;
+  justify-content: space-between; }
+  nav .logo-img {
+    width: 80px !important;
+    height: auto !important;
+    display: block; }
+  nav ul {
+    display: flex;
+    flex-direction: row; }
 
 /*# sourceMappingURL=MainLayout.module.css.map */
