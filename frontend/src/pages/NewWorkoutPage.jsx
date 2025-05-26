@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
+import styles from './NewWorkoutPage.module.scss'
 
 const NewWorkoutPage = () => {
     const navigate = useNavigate()

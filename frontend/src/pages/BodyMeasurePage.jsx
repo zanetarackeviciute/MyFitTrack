@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import styles from './BodyMeasurePage.module.scss'
 
 const BodyMeasurePage = () => {
     const navigate = useNavigate()

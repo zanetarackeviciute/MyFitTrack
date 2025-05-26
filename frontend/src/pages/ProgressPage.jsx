@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import styles from './ProgressPage.module.scss'
 
 const ProgressPage = () => {
     const [progressData, setProgressData] = useState()
