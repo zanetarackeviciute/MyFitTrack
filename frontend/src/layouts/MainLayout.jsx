@@ -1,11 +1,12 @@
 import { Outlet, NavLink } from "react-router-dom"
+import styles from './MainLayout.module.scss'
 
 const MainLayout = () => {
     return (
         <div>
             <nav>
                 <div>
-                    <NavLink to='/'>BetterDaily</NavLink>
+                    <NavLink to='/'>MyFitTrack</NavLink>
                 </div>
                 <ul>
                     <li><NavLink to='/'>Home</NavLink></li>
