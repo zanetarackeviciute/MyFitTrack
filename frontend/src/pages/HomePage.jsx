@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from "react"
-import styles from './HomePage.module.scss'
+import './HomePage.scss'
 const HomePage = () => {
     // moterims BMR=655+(9.6×svoris)+(1.8× ugis−(4.7×amzius)
     // vyrams BMR=66+(13.7×svoris)+(5×ugis)−(6.8×amzius)

@@ -1,14 +1,14 @@
 import { Outlet, NavLink } from "react-router-dom"
-import styles from './MainLayout.module.scss'
+import './MainLayout.scss'
 import logo from '../assets/MyFitTrackLogo.png'
 
 const MainLayout = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand bg-dark">
-                <div className="container">
-                    <div id="logo">
-                        <NavLink to='/' className="navbar-brand"><img src={logo} alt="logo" className="logo-img"/></NavLink>
+            <nav className="navbar navbar-expand-xl bg-dark">
+                <div className= "container">
+                    <div className="logo">
+                        <NavLink to='/' className="navbar-brand"><img src={logo} alt="logo" className="logoImg"/></NavLink>
                     </div>
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav">
@@ -22,8 +22,10 @@ const MainLayout = () => {
                     </div>
                 </div>
             </nav>
-            <div>
-                <Outlet/>
+            <div className="main-structure">
+                <div className="container">
+                    <Outlet/>
+                </div>
             </div>
         </div>
     )

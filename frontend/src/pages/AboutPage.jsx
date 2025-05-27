@@ -1,4 +1,4 @@
-import styles from './AboutPage.module.scss'
+import './AboutPage.scss'
 const AboutPage = () => {
     return (
         <div>

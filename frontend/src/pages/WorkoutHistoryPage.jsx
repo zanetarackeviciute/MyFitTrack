@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import styles from './WorkoutHistoryPage.module.scss'
+import './WorkoutHistoryPage.scss'
 
 const WorkoutHistoryPage = () => {
     const [workouts, setWorkouts] = useState([])

@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #f6f7f8;
+  font-family: "Montserrat", sans-serif;
+  color: #1D4D72; }
+  body .navbar .container {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center; }
+    body .navbar .container .logo {
+      width: 100px;
+      height: auto;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center; }
+      body .navbar .container .logo .logoImg {
+        width: 100%;
+        display: block;
+        align-items: center;
+        border-radius: 50%; }
+    body .navbar .container .collapse {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end; }
+      body .navbar .container .collapse .navbar-nav {
+        display: flex;
+        gap: 20px; }
+        body .navbar .container .collapse .navbar-nav .nav-item a {
+          color: #2DB9F5;
+          text-decoration: none;
+          font-size: 16px;
+          text-transform: uppercase; }
+        body .navbar .container .collapse .navbar-nav .nav-item a:hover {
+          color: #0f81b1; }
+  body .main-structure .container {
+    margin: 30px auto;
+    text-align: center; }
+
+/*# sourceMappingURL=MainLayout.css.map */
