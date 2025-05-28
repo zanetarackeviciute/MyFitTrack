@@ -5,7 +5,7 @@ import logo from '../assets/MyFitTrackLogo.png'
 const MainLayout = () => {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-dark">
+            <nav className="navbar bg-dark">
                 <div className= "container">
                     <div className="logo">
                         <NavLink to='/' className="navbar-brand"><img src={logo} alt="logo" className="logoImg"/></NavLink>
@@ -15,13 +15,13 @@ const MainLayout = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="nav">
                         <ul className="navbar-nav">
-                            <li className="nav-item active" aria-current="page"><NavLink to='/'>Dashboard</NavLink></li>
-                            <li className="nav-item"><NavLink to='/macros'>Calories</NavLink></li>
-                            <li className="nav-item"><NavLink to='/new-workout'>Start workout</NavLink></li>
-                            <li className="nav-item"><NavLink to='/body-measure'>Body stats</NavLink></li>
-                            <li className="nav-item"><NavLink to='/progress'>My progress</NavLink></li>
-                            <li className="nav-item"><NavLink to='/workout-history'>Workout history</NavLink></li>
-                            <li className="nav-item"><NavLink to='/about'>About MyFitTrack</NavLink></li>
+                            <li className="nav-item active" aria-current="page"><NavLink to='/'>Pradžia</NavLink></li>
+                            <li className="nav-item"><NavLink to='/macros'>Makroelementai</NavLink></li>
+                            <li className="nav-item"><NavLink to='/new-workout'>Nauja treniruotė</NavLink></li>
+                            <li className="nav-item"><NavLink to='/body-measure'>Matmenys</NavLink></li>
+                            <li className="nav-item"><NavLink to='/progress'>Mano progresas</NavLink></li>
+                            <li className="nav-item"><NavLink to='/workout-history'>Treniruočių istorija</NavLink></li>
+                            <li className="nav-item"><NavLink to='/about'>Apie MyFitTrack</NavLink></li>
                         </ul>
                     </div>
                 </div>

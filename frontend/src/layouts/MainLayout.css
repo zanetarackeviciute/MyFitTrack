@@ -20,7 +20,7 @@ body {
         align-items: center;
         border-radius: 50%; }
     body .navbar .container .navbar-toggler {
-      background: red; }
+      background: #2d82de; }
     body .navbar .container .navbar-collapse.show {
       display: flex;
       flex-grow: 1;
