@@ -16,6 +16,7 @@ const MainLayout = () => {
                     <div className="collapse navbar-collapse" id="nav">
                         <ul className="navbar-nav">
                             <li className="nav-item active" aria-current="page"><NavLink to='/'>Dashboard</NavLink></li>
+                            <li className="nav-item"><NavLink to='/macros'>Calories</NavLink></li>
                             <li className="nav-item"><NavLink to='/new-workout'>Start workout</NavLink></li>
                             <li className="nav-item"><NavLink to='/body-measure'>Body stats</NavLink></li>
                             <li className="nav-item"><NavLink to='/progress'>My progress</NavLink></li>

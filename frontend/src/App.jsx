@@ -6,6 +6,7 @@ import NewWorkoutPage from './pages/NewWorkoutPage'
 import BodyMeasurePage from './pages/BodyMeasurePage'
 import WorkoutHistoryPage from './pages/WorkoutHistoryPage'
 import AboutPage from './pages/AboutPage'
+import MacrosPage from './pages/MacrosPage'
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<MainLayout/>}>
                         <Route path='/' element={<HomePage/>} />
+                        <Route path='/macros' element={<MacrosPage/>}/>
                         <Route path='/progress' element={<ProgressPage/>} />
                         <Route path='/new-workout' element={<NewWorkoutPage/>} />
                         <Route path='/body-measure' element={<BodyMeasurePage/>} />
