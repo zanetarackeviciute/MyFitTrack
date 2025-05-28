@@ -5,7 +5,7 @@ body {
   color: #1D4D72; }
   body .navbar .container {
     width: 100%;
-    display: flex !important;
+    display: flex;
     justify-content: space-between;
     align-items: center; }
     body .navbar .container .logo {
@@ -19,19 +19,23 @@ body {
         display: block;
         align-items: center;
         border-radius: 50%; }
-    body .navbar .container .collapse {
-      flex-grow: 1;
+    body .navbar .container .navbar-toggler {
+      background: red; }
+    body .navbar .container .navbar-collapse.show {
       display: flex;
+      flex-grow: 1;
       justify-content: flex-end; }
-      body .navbar .container .collapse .navbar-nav {
+    body .navbar .container .navbar-collapse {
+      justify-content: flex-end; }
+      body .navbar .container .navbar-collapse .navbar-nav {
         display: flex;
         gap: 20px; }
-        body .navbar .container .collapse .navbar-nav .nav-item a {
+        body .navbar .container .navbar-collapse .navbar-nav .nav-item a {
           color: #2DB9F5;
           text-decoration: none;
           font-size: 16px;
           text-transform: uppercase; }
-        body .navbar .container .collapse .navbar-nav .nav-item a:hover {
+        body .navbar .container .navbar-collapse .navbar-nav .nav-item a:hover {
           color: #0f81b1; }
   body .main-structure .container {
     margin: 30px auto;
