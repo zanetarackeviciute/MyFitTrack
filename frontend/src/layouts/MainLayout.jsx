@@ -15,12 +15,12 @@ const MainLayout = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="nav">
                         <ul className="navbar-nav">
-                            <li className="nav-item active" aria-current="page"><NavLink to='/'>Home</NavLink></li>
-                            <li className="nav-item"><NavLink to='/new-workout'>New workout</NavLink></li>
-                            <li className="nav-item"><NavLink to='/body-measure'>Body measure</NavLink></li>
-                            <li className="nav-item"><NavLink to='/progress'>Progress</NavLink></li>
-                            <li className="nav-item"><NavLink to='/workout-history'>History</NavLink></li>
-                            <li className="nav-item"><NavLink to='/about'>About</NavLink></li>
+                            <li className="nav-item active" aria-current="page"><NavLink to='/'>Dashboard</NavLink></li>
+                            <li className="nav-item"><NavLink to='/new-workout'>Start workout</NavLink></li>
+                            <li className="nav-item"><NavLink to='/body-measure'>Body stats</NavLink></li>
+                            <li className="nav-item"><NavLink to='/progress'>My progress</NavLink></li>
+                            <li className="nav-item"><NavLink to='/workout-history'>Workout history</NavLink></li>
+                            <li className="nav-item"><NavLink to='/about'>About MyFitTrack</NavLink></li>
                         </ul>
                     </div>
                 </div>
