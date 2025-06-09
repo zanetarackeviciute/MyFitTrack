@@ -48,6 +48,42 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+app.get('/workout-history', (req, res) => {
+    res.send({message: 'all workouts'})
+})
+app.get('/workout-history/:id', (req, res) => {
+    res.send({message: 'single workout'})
+})
+app.post('/workout-history/:id', (req, res) => {
+    res.send({message: 'create workout'})
+})
+app.put('/workout-history/:id', (req, res) => {
+    res.send({message: 'update workout'})
+})
+app.delete('/workout-history/:id', (req, res) => {
+    res.send({message: 'delete workout'})
+})
+
+app.get('/progress', (req, res) => {
+    res.send({message: 'all measurements'})
+})
+app.get('/progress/:id', (req, res) => {
+    res.send({message: 'single measurement'})
+})
+app.post('/progress/:id', (req, res) => {
+    res.send({message: 'create measurement'})
+})
+app.put('/progress/:id', (req, res) => {
+    res.send({message: 'update measurement'})
+})
+app.delete('/progress/:id', (req, res) => {
+    res.send({message: 'delete measurement'})
+})
+
+
+
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
