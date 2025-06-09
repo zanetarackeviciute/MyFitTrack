@@ -5,6 +5,7 @@ import './NewWorkoutPage.scss'
 const NewWorkoutPage = () => {
     const navigate = useNavigate()
 
+    const [date, setDate] = useState('')
     const [activity, setActivity] = useState('')
     const [intensity, setIntensity] = useState('')
     const [weight, setWeight] = useState(0)
@@ -64,7 +65,7 @@ const NewWorkoutPage = () => {
         setCalories(burnedCal)
 
         const workout = {
-            date: new Date(),
+            date: date,
             activity: activity,
             intensity: intensity,
             weight: weight,
@@ -86,7 +87,7 @@ const NewWorkoutPage = () => {
             })
             .then(data => {
                 // console.log(data)
-                navigate('/new-workout')
+                navigate('/workout-history')
             })
     }
 
@@ -106,6 +107,10 @@ const NewWorkoutPage = () => {
             <h2>Jūsų treniruotės kalorijos</h2>
             <p>Pasirinkite sporto šaką ir treniruotės trukmę, kad sužinotumėte, kiek kalorijų sudeginote!</p>
             <form style={{display: 'flex', flexDirection: 'column', gap: '20px', width:'fit-content'}}>
+                <div className="date" style={{display: 'flex', gap: '10px'}}>
+                    <label htmlFor="date">Pasirinkite datą</label>
+                    <input type="date" id="date" name="date"/>
+                </div>
                 <select onChange={activityHandler} name="activity" id="activity" defaultValue="Pasirinkti" style={{display: 'flex', gap: '10px'}}>
                     <option value="Pasirinkti" disabled>Pasirinkti</option>
                     <option value="walking">Ėjimas</option>
