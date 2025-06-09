@@ -1,0 +1,45 @@
+GET http://localhost:3000
+
+###
+
+GET http://localhost:3000/workout-history
+
+###
+
+GET http://localhost:3000/progress
+
+###
+
+GET http://localhost:3000/workout-history/6846c4f52f8a39bbaa8fab8d
+
+###
+
+PUT http://localhost:3000/workout-history/6846c4f52f8a39bbaa8fab8d
+Content-Type: application/json
+
+{
+    "weight": 150
+}
+
+
+###
+
+POST http://localhost:3000/workout-history
+Content-Type: application/json
+
+{
+    "date": "2025-06-09T10:30:00.000Z",
+    "activity": "HIIT",
+    "intensity": "Lengvas",
+    "weight": 90,
+    "duration": 40,
+    "burnedCalories": 300
+}
+
+###
+
+DELETE  http://localhost:3000/workout-history/6846c637155c9ebe76b1a57b
+
+###
+
+GET http://localhost:3000/progress
