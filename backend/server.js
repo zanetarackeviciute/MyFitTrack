@@ -1,8 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express()
 const port = 3000
+
+app.use(cors())
 
 app.use(express.json())
 
@@ -53,7 +56,7 @@ app.get('/', (req, res) => {
 app.get('/workout-history', async (req, res) => {
     // res.send({message: 'all workouts'})
     const workouts = await Workout.find()
-    return res.send(workouts)
+    return res.send({workouts})
 })
 
 app.get('/workout-history/:id', async (req, res) => {

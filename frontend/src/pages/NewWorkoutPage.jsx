@@ -80,14 +80,15 @@ const NewWorkoutPage = () => {
             },
             body: JSON.stringify(workout)
         })
-            .then(res => {
-                if (res.status == 201) {
-                    return res.json()
+            .then(async res => {
+                if (!res.ok) {
+                    throw new Error(await res.text())
                 }
+                return res.json()
             })
-            .then(data => {
-                // console.log(data)
-                navigate('/workout-history')
+            .then(() => navigate('/workout-history'))
+            .catch(err => {
+                console.error('Nepavyko išsaugoti treniruotės', err.message)
             })
     }
 
@@ -109,7 +110,7 @@ const NewWorkoutPage = () => {
             <form style={{display: 'flex', flexDirection: 'column', gap: '20px', width:'fit-content'}}>
                 <div className="date" style={{display: 'flex', gap: '10px'}}>
                     <label htmlFor="date">Pasirinkite datą</label>
-                    <input type="date" id="date" name="date"/>
+                    <input type="date" id="date" name="date" value={date} onChange={e => setDate(e.target.value)} required/>
                 </div>
                 <select onChange={activityHandler} name="activity" id="activity" defaultValue="Pasirinkti" style={{display: 'flex', gap: '10px'}}>
                     <option value="Pasirinkti" disabled>Pasirinkti</option>
