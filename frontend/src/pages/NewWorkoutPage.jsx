@@ -86,7 +86,7 @@ const NewWorkoutPage = () => {
                 }
                 return res.json()
             })
-            .then(() => navigate('/workout-history'))
+            // .then(() => navigate('/workout-history'))
             .catch(err => {
                 console.error('Nepavyko išsaugoti treniruotės', err.message)
             })

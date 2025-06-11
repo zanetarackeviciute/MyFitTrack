@@ -7,7 +7,7 @@ const ProgressPage = () => {
     useEffect(() => {
         fetch('http://localhost:3000/progress')
         .then((res) => res.json())
-        .then((data) => setProgressData(data))
+        .then((data) => setProgressData(data.progressData))
         .catch ((err) => console.error('Klaida', err))
     }, [])
     

@@ -4,7 +4,7 @@ import './WorkoutHistoryPage.scss'
 const WorkoutHistoryPage = () => {
     const [workouts, setWorkouts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:3000/progress')
+        fetch('http://localhost:3000/workout-history')
         .then((res) => res.json())
         .then((data) => setWorkouts(data.workouts))
     }, [])

@@ -89,7 +89,7 @@ const BodyMeasurePage = () => {
                     matmenys &&
                     <div>
                         <p>Paskutiniai įvesties matmenys:</p>
-                        <p>Įvesties datą: {matmenys.data}</p>
+                        <p>Įvesties data: {matmenys.data}</p>
                         <p>Svoris: {matmenys.svoris}</p>
                         <p>Krūtinė: {matmenys.krutine}</p>
                         <p>Liemuo: {matmenys.liemuo}</p>
