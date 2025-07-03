@@ -4,7 +4,6 @@ import './BodyMeasurePage.scss'
 
 const BodyMeasurePage = () => {
     const navigate = useNavigate()
-
     const dateRef = useRef()
     const weightRef = useRef()
     const chestRef = useRef()
@@ -29,25 +28,25 @@ const BodyMeasurePage = () => {
         }
         setMatmenys(newMeasure)
         
-        fetch('http://localhost:3000/body-measure', {
+        fetch('http://localhost:3000/progress', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newMeasure)
         })
-            .then(res => {
-                if (res.status == 201) {
-                    return res.json()
+            .then(async res => {
+                if (!res.ok) {
+                    throw new Error(await res.text())
                 }
+                alert('Sėkmingai įvesti duomenis! Galite sekti progreso puslapyje')
+                // navigate('/progress')
+                return res.json()
             })
-            .then(data => {
-                console.log(data)
-                navigate('/progress')
+            .catch(err => {
+                console.error('Nepavyko išsaugoti įvestų matmenų', err.message)
             })
     }
-
-
     return (
         <div>
             <h2>Sek savo kūno pokyčius</h2>
@@ -89,13 +88,13 @@ const BodyMeasurePage = () => {
                     matmenys &&
                     <div>
                         <p>Paskutiniai įvesties matmenys:</p>
-                        <p>Įvesties data: {matmenys.data}</p>
-                        <p>Svoris: {matmenys.svoris}</p>
-                        <p>Krūtinė: {matmenys.krutine}</p>
-                        <p>Liemuo: {matmenys.liemuo}</p>
-                        <p>Klubai: {matmenys.klubai}</p>
-                        <p>Šlaunis: {matmenys.slaunis}</p>
-                        <p>Bicepsas: {matmenys.bicepsas}</p>
+                        <p>Įvesties data: {matmenys.date}</p>
+                        <p>Svoris: {matmenys.weight}</p>
+                        <p>Krūtinė: {matmenys.chest}</p>
+                        <p>Liemuo: {matmenys.waist}</p>
+                        <p>Klubai: {matmenys.hips}</p>
+                        <p>Šlaunis: {matmenys.tighs}</p>
+                        <p>Bicepsas: {matmenys.biceps}</p>
                     </div>
                 }
         </div>
