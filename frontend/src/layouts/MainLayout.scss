@@ -1,9 +1,13 @@
 body {
     margin: 0;
-    background-color: #f6f7f8;
+    background-color: #F9FBFC;
     font-family: "Montserrat", sans-serif;
     color: #1D4D72;
 
+    .main-page {
+        background-color: #1f2d3d2a;
+        height: 100vh;
+    
     .navbar .container {
         width: 100%;
         display: flex;
@@ -26,7 +30,7 @@ body {
         }
 
         .navbar-toggler {
-            background: rgb(45, 130, 222);
+            background: #2DB9F5;
         }
 
         .navbar-collapse.show {
@@ -58,8 +62,11 @@ body {
 
     }
 
-    .main-structure .container {
-        margin: 30px auto;
-        text-align: center;
+    .main-structure {
+        .container {
+            margin: 30px auto;
+            text-align: center;
+        }
     }
+}
 }

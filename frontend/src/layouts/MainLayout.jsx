@@ -4,7 +4,7 @@ import logo from '../assets/MyFitTrackLogo.png'
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="main-page">
             <nav className="navbar bg-dark">
                 <div className= "container">
                     <div className="logo">

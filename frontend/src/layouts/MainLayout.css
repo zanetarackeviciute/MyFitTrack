@@ -1,44 +1,47 @@
 body {
   margin: 0;
-  background-color: #f6f7f8;
+  background-color: #F9FBFC;
   font-family: "Montserrat", sans-serif;
   color: #1D4D72; }
-  body .navbar .container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    body .navbar .container .logo {
-      width: 100px;
-      height: auto;
-      flex-shrink: 0;
+  body .main-page {
+    background-color: #1f2d3d2a;
+    height: 100vh; }
+    body .main-page .navbar .container {
+      width: 100%;
       display: flex;
+      justify-content: space-between;
       align-items: center; }
-      body .navbar .container .logo .logoImg {
-        width: 100%;
-        display: block;
-        align-items: center;
-        border-radius: 50%; }
-    body .navbar .container .navbar-toggler {
-      background: #2d82de; }
-    body .navbar .container .navbar-collapse.show {
-      display: flex;
-      flex-grow: 1;
-      justify-content: flex-end; }
-    body .navbar .container .navbar-collapse {
-      justify-content: flex-end; }
-      body .navbar .container .navbar-collapse .navbar-nav {
+      body .main-page .navbar .container .logo {
+        width: 100px;
+        height: auto;
+        flex-shrink: 0;
         display: flex;
-        gap: 20px; }
-        body .navbar .container .navbar-collapse .navbar-nav .nav-item a {
-          color: #2DB9F5;
-          text-decoration: none;
-          font-size: 16px;
-          text-transform: uppercase; }
-        body .navbar .container .navbar-collapse .navbar-nav .nav-item a:hover {
-          color: #0f81b1; }
-  body .main-structure .container {
-    margin: 30px auto;
-    text-align: center; }
+        align-items: center; }
+        body .main-page .navbar .container .logo .logoImg {
+          width: 100%;
+          display: block;
+          align-items: center;
+          border-radius: 50%; }
+      body .main-page .navbar .container .navbar-toggler {
+        background: #2DB9F5; }
+      body .main-page .navbar .container .navbar-collapse.show {
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end; }
+      body .main-page .navbar .container .navbar-collapse {
+        justify-content: flex-end; }
+        body .main-page .navbar .container .navbar-collapse .navbar-nav {
+          display: flex;
+          gap: 20px; }
+          body .main-page .navbar .container .navbar-collapse .navbar-nav .nav-item a {
+            color: #2DB9F5;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase; }
+          body .main-page .navbar .container .navbar-collapse .navbar-nav .nav-item a:hover {
+            color: #0f81b1; }
+    body .main-page .main-structure .container {
+      margin: 30px auto;
+      text-align: center; }
 
 /*# sourceMappingURL=MainLayout.css.map */
