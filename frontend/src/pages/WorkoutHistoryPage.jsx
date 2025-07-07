@@ -7,6 +7,7 @@ const WorkoutHistoryPage = () => {
         fetch('http://localhost:3000/workout-history')
         .then((res) => res.json())
         .then((data) => setWorkouts(data.workouts))
+        .catch ((err) => console.error('Klaida', err))
     }, [])
 
   return (
