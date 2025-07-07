@@ -4,13 +4,13 @@ import './BodyMeasurePage.scss'
 
 const BodyMeasurePage = () => {
     const navigate = useNavigate()
-    const dateRef = useRef()
-    const weightRef = useRef()
-    const chestRef = useRef()
-    const waistRef = useRef()
-    const hipsRef = useRef()
-    const tighsRef = useRef()
-    const bicepsRef = useRef()
+    const dateRef = useRef(null)
+    const weightRef = useRef(0)
+    const chestRef = useRef(0)
+    const waistRef = useRef(0)
+    const hipsRef = useRef(0)
+    const thighsRef = useRef(0)
+    const bicepsRef = useRef(0)
 
     const [matmenys, setMatmenys] = useState()
 
@@ -23,7 +23,7 @@ const BodyMeasurePage = () => {
             chest: chestRef.current.valueAsNumber,
             waist: waistRef.current.valueAsNumber,
             hips: hipsRef.current.valueAsNumber,
-            tighs: tighsRef.current.valueAsNumber,
+            tighs: thighsRef.current.valueAsNumber,
             biceps: bicepsRef.current.valueAsNumber
         }
         setMatmenys(newMeasure)
@@ -73,8 +73,8 @@ const BodyMeasurePage = () => {
                     <input ref={hipsRef} type="number" min={20} max={300} id="hipsInput"/>
                 </div>
                 <div style={{display: 'flex', gap: '10px'}}>
-                    <label htmlFor="tighsInput">Šlaunis</label>
-                    <input  ref={tighsRef}type="number" min={20} max={300} id="tighsInput"/>
+                    <label htmlFor="thighsInput">Šlaunis</label>
+                    <input  ref={thighsRef}type="number" min={20} max={300} id="thighsInput"/>
                 </div>
                 <div style={{display: 'flex', gap: '10px'}}>
                     <label htmlFor="bicepsInput">Bicepsas</label>
@@ -93,7 +93,7 @@ const BodyMeasurePage = () => {
                         <p>Krūtinė: {matmenys.chest}</p>
                         <p>Liemuo: {matmenys.waist}</p>
                         <p>Klubai: {matmenys.hips}</p>
-                        <p>Šlaunis: {matmenys.tighs}</p>
+                        <p>Šlaunis: {matmenys.thighs}</p>
                         <p>Bicepsas: {matmenys.biceps}</p>
                     </div>
                 }
