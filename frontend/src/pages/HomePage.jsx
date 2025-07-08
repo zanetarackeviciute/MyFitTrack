@@ -3,13 +3,19 @@ import './HomePage.scss'
 const HomePage = () => {
     
     return (
-        <div>
-            <div className='hello-text'>
-                <h1>Sveikas atvykęs į MyFitTrack!</h1>
+        <div className='home-text'>
+            <div className='welcome-text'>
+                <h1>Sveikas atvykęs į <strong>MyFitTrack</strong>!</h1>
                 <hr></hr>
                 <h4>Pradėk naują treniruotę, sek savo kūno apimtis arba peržiūrėk pažangą.</h4>
             </div>
-            <button>Start my journey</button>
+            <div className='buttons'>
+                <button>Registruotis</button>
+                <button>Prisijungti</button>
+            </div>
+
+            
+            
         </div>
 
         
