@@ -22,10 +22,9 @@
       border: none;
       border-radius: 5px;
       padding: 10px 15px;
-      font-size: 24px; }
+      font-size: 24px;
+      margin-bottom: 20px; }
     .home-text .buttons button:hover {
       background-color: #153B57; }
-  .home-text .registration form {
-    display: none; }
 
 /*# sourceMappingURL=HomePage.css.map */
