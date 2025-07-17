@@ -4,7 +4,7 @@ import './HomePage.scss'
 const HomePage = () => {
     const regPasswordRef = useRef()
     const regPasswordRepeatRef = useRef()
-    const regEmailRef = useRef()
+    const [email, setEmail] = useState('')
     const regNameRef = useRef()
 
     const [showRegForm, setShowRegForm] = useState(false)
@@ -15,21 +15,43 @@ const HomePage = () => {
         setShowRegForm(true)
     }
 
-    const handleRegisterSubmit = (e) => {
-        e.preventDefault()
-        console.log('email -', regEmailRef.current.value, 'passwrd - ', regPasswordRef.current.value)
-        setShowRegForm(false)
-    }
-
     const handleSignIn = () => {
         setShowSignIn(true)
         setShowRegForm(false)
+    }
+
+    const handleRegisterSubmit = (e) => {
+        e.preventDefault()
+        console.log('email -', email, 'passwrd - ', regPasswordRef.current.value, regPasswordRepeatRef.current.value)
+
+        if (!regNameRef.current.value.trim()) {
+            alert('Įveskite vardą')
+            return
+        }
+        if (regPasswordRef.current.value.length < 8 || regPasswordRef.current.value.length > 20 || regPasswordRepeatRef.current.value.length < 8 || regPasswordRepeatRef.current.value.length > 20) {
+            alert('Slaptažodžio ilgis turi būti nuo 8 iki 20 simbolių.')
+            return;
+        } 
+        if (regPasswordRef.current.value !== regPasswordRepeatRef.current.value) {
+            alert('Slaptažodžiai nesutampa!')
+            return;
+        } 
+        alert('Sveikiname! Jūsų registracija sėkmninga!')
+        setShowRegForm(false)
+        
+
+        setEmail('')
+        regNameRef.current.value = ''
+        regPasswordRef.current.value = ''
+        regPasswordRepeatRef.current.value = ''
     }
 
     const handleClose = () => {
         setShowRegForm(false)
         setShowSignIn(false)
     }
+
+
 
     return (
         <div className='home-text'>
@@ -52,13 +74,13 @@ const HomePage = () => {
                             <div className="mb-3 row">
                                 <label htmlFor="inputName" className="col-sm-2 col-form-label">Įveskite vardą</label>
                                 <div className="col-sm-10">
-                                    <input type="text" ref={regNameRef} id="inputName"/>
+                                    <input type="text" ref={regNameRef} className="form-control" id="inputName"/>
                                 </div>
                             </div>
                             <div className="mb-3 row">
-                                <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Įveskite el. paštą</label>
+                                <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Įveskite el. paštą</label>
                                 <div className="col-sm-10">
-                                    <input type="text" ref={regEmailRef} readOnly className="form-control-plaintext" id="staticEmail" value="email@pavyzdys.com"/>
+                                    <input type="email" placeholder="email@pavyzdys.com" onChange={(e) => setEmail(e.target.value)} className="form-control" id="inputEmail" value={email}/>
                                 </div>
                             </div>
                             <div className="mb-3 row">
