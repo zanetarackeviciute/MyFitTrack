@@ -10,11 +10,11 @@ const HomePage = () => {
     const [showRegForm, setShowRegForm] = useState(false)
     const [showSignIn, setShowSignIn] = useState(false)
 
-    const handleRegisterClick = () => {
-        setShowSignIn(false)
-        setShowRegForm(true)
-    }
-
+    const [errorName, setErrorName] = useState('')
+    const [errorEmail, setErrorEmail] = useState('')
+    const [errorPassword, setErrorPassword] = useState('')
+    const [errorPasswordRepeat, setErrorPasswordRepeat] = useState('')
+    
     const handleSignIn = () => {
         setShowSignIn(true)
         setShowRegForm(false)
@@ -22,35 +22,56 @@ const HomePage = () => {
 
     const handleRegisterSubmit = (e) => {
         e.preventDefault()
-        console.log('email -', email, 'passwrd - ', regPasswordRef.current.value, regPasswordRepeatRef.current.value)
+        // console.log('email -', email, 'passwrd - ', regPasswordRef.current.value, regPasswordRepeatRef.current.value)
+
+        let findError = false
 
         if (!regNameRef.current.value.trim()) {
-            alert('Įveskite vardą')
-            return
+            setErrorName('Įveskite vardą')
+            findError = true
         }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            setErrorEmail('Neteisingas el.pašto formatas')
+            findError = true
+        }
+
         if (regPasswordRef.current.value.length < 8 || regPasswordRef.current.value.length > 20 || regPasswordRepeatRef.current.value.length < 8 || regPasswordRepeatRef.current.value.length > 20) {
-            alert('Slaptažodžio ilgis turi būti nuo 8 iki 20 simbolių.')
-            return;
-        } 
+            setErrorPassword('Slaptažodžio ilgis turi būti nuo 8 iki 20 simbolių.')
+            findError = true
+        }
+
         if (regPasswordRef.current.value !== regPasswordRepeatRef.current.value) {
-            alert('Slaptažodžiai nesutampa!')
-            return;
+            setErrorPasswordRepeat('Slaptažodžiai nesutampa!')
+            findError = true
         } 
-        alert('Sveikiname! Jūsų registracija sėkmninga!')
+
+        if (findError) return
+
+        alert('Sveikiname! Jūsų registracija sėkminga!')
         setShowRegForm(false)
         
-
         setEmail('')
         regNameRef.current.value = ''
         regPasswordRef.current.value = ''
         regPasswordRepeatRef.current.value = ''
     }
 
+    const handleRegisterClick = () => {
+        setShowSignIn(false)
+        setShowRegForm(true)
+    }
+    
     const handleClose = () => {
         setShowRegForm(false)
         setShowSignIn(false)
-    }
 
+        setEmail('')
+        setErrorName('')
+        setErrorEmail('')
+        setErrorPassword('')
+        setErrorPasswordRepeat('')
+    }
 
 
     return (
@@ -75,18 +96,21 @@ const HomePage = () => {
                                 <label htmlFor="inputName" className="col-sm-2 col-form-label">Įveskite vardą</label>
                                 <div className="col-sm-10">
                                     <input type="text" ref={regNameRef} className="form-control" id="inputName"/>
+                                    {errorName && <div className='error-text'>{errorName}</div>}
                                 </div>
                             </div>
                             <div className="mb-3 row">
                                 <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Įveskite el. paštą</label>
                                 <div className="col-sm-10">
                                     <input type="email" placeholder="email@pavyzdys.com" onChange={(e) => setEmail(e.target.value)} className="form-control" id="inputEmail" value={email}/>
+                                    {errorEmail && <div className='error-text'>{errorEmail}</div>}
                                 </div>
                             </div>
                             <div className="mb-3 row">
                                 <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Sukurkite slaptažodį: </label>
                                 <div className="col-sm-10">
                                     <input type="password" ref={regPasswordRef} className="form-control" id="inputPassword" aria-describedby="passwordHelpBlock"/>
+                                    {errorPassword && <div className='error-text'>{errorPassword}</div>}
                                     <div id="passwordHelpBlock" className="form-text">
                                         Slaptažodį turi sudaryti 8-20 simbolių , gali būti raidės ar skaičiai. Be tarpų, specialiųjų simbolių ar emoji.
                                     </div>
@@ -96,6 +120,7 @@ const HomePage = () => {
                                 <label htmlFor="inputPasswordRepeat" className="col-sm-2 col-form-label">Pakartokite slaptažodį: </label>
                                 <div className="col-sm-10">
                                     <input type="password" ref={regPasswordRepeatRef} className="form-control" id="inputPasswordRepeat" aria-describedby="passwordHelpBlock"/>
+                                    {errorPasswordRepeat && <div className='error-text'>{errorPasswordRepeat}</div>}
                                 </div>
                             </div>
                             <div className="col-12">
